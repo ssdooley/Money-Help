@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+html,
+body,
+app-root,
+.app-frame,
+.app-body {
+    height: 100%;
+    color: #e1e1e1;
+}
+
+html,
+body,
+app-root,
+.app-frame {
+    overflow: hidden;
+}
+
+.app-body {
+    overflow: auto;
+}

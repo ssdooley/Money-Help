@@ -1,0 +1,11 @@
+<md-nav-list [@slide]="sidepanel.state | async">
+    <a md-list-item routerLink="/home" routerLinkActive="active" [@slide]="state">
+        <md-icon>home</md-icon> <span [@reveal]="state">Home</span>
+    </a>
+    <a md-list-item routerLink="/budget" routerLinkActive="active" [@slide]="state">
+        <md-icon>apps</md-icon> <span [@reveal]="state">Budget</span>
+    </a>
+    <a md-list-item routerLink="/debt" routerLinkActive="active" [@slide]="state">
+        <md-icon>developer_mode</md-icon> <span [@reveal]="state">Debt</span>
+    </a>
+</md-nav-list>

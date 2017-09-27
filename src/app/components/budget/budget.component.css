@@ -1,0 +1,24 @@
+.budget-style {
+    display: flex;
+    background-color: #13A54B;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 1px;
+}
+
+.spacing, .select-spacing {
+    padding: 10px;
+    width: 23%;
+}
+
+.select-spacing {
+    margin-top: 9px
+}
+
+.budget-border {
+    border: 2px red solid
+}
+
+h2 .md-toolbar-tools {
+    text-align: center;
+}

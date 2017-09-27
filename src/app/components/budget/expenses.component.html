@@ -10,14 +10,14 @@
       <input mdInput placeholder="Expense Name" [(ngModel)]="d.expenseType">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Amount" [(ngModel)]="d.expense">
+      <input mdInput placeholder="Amount" [(ngModel)]="d.expense" type="number">
     </md-input-container>
     <button md-icon-button color="warn" mdTooltip="Click to remove this expense" [mdTooltipPosition]="position">
-      <md-icon class="md-16" (click)="budgetService.delete_expense()">&#xE15C;</md-icon>
+      <md-icon class="md-16" (click)="budgetService.delete_expense(i)">&#xE15C;</md-icon>
     </button>
   </section>
 </div>
 <br>
 <div>
-  <a (ngModel)="budgetService.income.value">${{budgetService.monthlyIncome | number:'1.2'}}</a>
+  <p>${{(budgetService.finances.monthly - budgetService.expdata.total) | number:'1.2'}}</p>
 </div>

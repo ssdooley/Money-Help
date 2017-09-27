@@ -3,16 +3,16 @@
     </md-toolbar>
 <div class="budget-border">
     <div class="budget-style">
-        <md-select class="select-spacing" placeholder="PayPeriod" [(ngModel)]="budgetService.payPeriod" (change)="budgetService.calcIncome()">
+        <md-select class="select-spacing" placeholder="PayPeriod" [(ngModel)]="budgetService.finances.payPeriod">
             <md-option *ngFor="let type of budgetService.incomeTypes" [value]="type">{{type}}</md-option>
         </md-select>
         <md-input-container class="spacing">
-            <input mdInput placeholder="Income per PayPeriod" #income [ngModel]="budgetService.income.value" (change)="budgetService.income.next(income.value)">
+            <input mdInput placeholder="Income per PayPeriod" #income [(ngModel)]="budgetService.finances.income">
         </md-input-container>
     </div>
     <div class="budget-style">
-        <h3>Monthly &nbsp; : &nbsp; ${{budgetService.monthlyIncome | number:'1.2'}} &nbsp;&nbsp; / &nbsp;&nbsp; Yearly &nbsp;
-            : &nbsp; ${{budgetService.yearlyIncome | number:'1.2'}}</h3>
+        <h3>Monthly &nbsp; : &nbsp; ${{budgetService.finances.monthly | number:'1.2'}} &nbsp;&nbsp; / &nbsp;&nbsp; Yearly &nbsp;
+            : &nbsp; ${{budgetService.finances.yearly | number:'1.2'}}</h3>
     </div>
 </div>
 <expenses></expenses>

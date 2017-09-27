@@ -9,10 +9,7 @@ import 'rxjs/add/observable/of';
 
 @Injectable()
 export class BudgetService {
-    payPeriod: string;
-    monthlyIncome: number;
-    yearlyIncome: number;
-    income = new BehaviorSubject<number>(0);
+    finances = new Income();
     expdata = new Expense();
     incomeTypes = [
         "Monthly",
@@ -21,47 +18,6 @@ export class BudgetService {
         "Yearly"
     ];
 
-    constructor() {
-        this.income.subscribe(income => {
-            this.calcIncome();
-
-        })
-    }
-
-    calcIncome() {
-        this.calcmonthlyIncome();
-        this.calcyearlyIncome();
-    }
-
-    calcmonthlyIncome() {
-        switch (this.payPeriod) {
-            case "Bi-Weekly": {
-                this.monthlyIncome = (this.income.value * 26) / 12;
-                break;
-            }
-            case "Monthly": {
-                this.monthlyIncome = this.income.value;
-                break;
-            }
-            case "Weekly": {
-                this.monthlyIncome = (this.income.value * 52) / 12;
-                break;
-            }
-            case "Yearly": {
-                this.monthlyIncome = (this.income.value / 12);
-                break;
-            }
-            default: {
-                this.monthlyIncome = this.income.value;
-                break;
-            }
-        }
-    }
-
-    calcyearlyIncome() {
-        this.yearlyIncome = (this.monthlyIncome * 12);
-    }
-
     add_expense() {
         this.expdata.data.push(new ExpenseData());
     }
@@ -69,6 +25,4 @@ export class BudgetService {
     delete_expense(index: number) {
         this.expdata.data.splice(index, 1);
     }
-
-
 }

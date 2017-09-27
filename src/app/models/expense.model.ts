@@ -28,7 +28,7 @@ export class Expense {
 
         if (this.data.length > 0) {
             this.data.map(expense => {
-                return expense.expense
+                return expense.expense;
             }).forEach(expense => {
                 total += expense;
             });

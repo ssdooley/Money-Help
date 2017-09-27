@@ -1,3 +1,29 @@
+<div class="header">
+    <h2>Debt</h2>
+    <button md-mini-fab color="primary" class="add-button" mdTooltip="Click to add debt" [mdTooltipPosition]="position">
+        <md-icon class="md-24" (click)="budgetService.add_debt()">add_box</md-icon>
+    </button>
+    <p class="add-button">Total debt : ${{budgetService.debtdata.totalDebt | number:'1.2'}}</p>
+</div>
 <div>
-    <md-toolbar>This is the debt page.</md-toolbar>
+    <section *ngFor="let d of budgetService.debtdata.data; let i = index" [style.background-color]="i % 2 === 0 ? '#555' : '#222'" class="section-style">
+        <md-input-container color="accent">
+            <input mdInput  placeholder="Debt Name" [(ngModel)]="d.debtType">
+        </md-input-container>
+        <md-input-container class="number-input" color="accent">
+            <input mdInput placeholder="Payoff" [(ngModel)]="d.payoff" type="number">
+        </md-input-container>
+        <md-input-container class="number-input" color="accent">
+            <input mdInput  placeholder="Minimum Payment" [(ngModel)]="d.minPayment" type="number">
+        </md-input-container>
+        <md-input-container class="number-input" color="accent">
+            <input mdInput  placeholder="Actual Payment" [(ngModel)]="d.actPayment" type="number">
+        </md-input-container>
+        <md-input-container class="percent-input" color="accent">
+            <input mdInput  placeholder="Percentage Rate" [(ngModel)]="d.apr" type="number">
+        </md-input-container>
+        <button md-icon-button color="warn" mdTooltip="Click to remove this debt" [mdTooltipPosition]="position">
+            <md-icon class="md-16" (click)="budgetService.delete_debt(i)">&#xE15C;</md-icon>
+          </button>
+    </section>
 </div>

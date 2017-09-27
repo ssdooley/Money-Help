@@ -1,0 +1,23 @@
+.header {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+
+.add-button {
+    margin-left: 10px;
+}
+
+.section-style {
+    padding-left: 1em;
+}
+
+.number-input {
+    width: 150px;
+}
+
+.percent-input {
+    width: 100px;
+}

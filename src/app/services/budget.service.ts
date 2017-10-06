@@ -13,6 +13,7 @@ export class BudgetService {
     finances = new Income();
     expdata = new Expense();
     debtdata = new Debt();
+    extraPay: number;
     incomeTypes = [
         'Monthly',
         'Bi-Weekly',
@@ -34,5 +35,18 @@ export class BudgetService {
 
     delete_debt(index: number) {
         this.debtdata.data.splice(index, 1);
+    }
+
+    get_extraPay() {
+        let extraPay = 0;
+
+        if(this.debtdata.totalDebt > 0 ){
+            this.debtdata.data.map(p => {
+                extraPay = Math.min.apply(p.payoff);
+                console.log(extraPay);
+            });            
+        }
+        
+        return extraPay;
     }
 }

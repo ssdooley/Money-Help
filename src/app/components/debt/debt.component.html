@@ -4,7 +4,14 @@
         <md-icon class="md-24" (click)="budgetService.add_debt()">add_box</md-icon>
     </button>
     <p class="add-button">Total debt : ${{budgetService.debtdata.totalDebt | number:'1.2'}}</p>
+    <br>
+    <p> ... Remaining Payoff: ${{budgetService.debtdata.remainPay}}</p>
 </div>
+<p>Today is {{budgetService.debtdata.currentDay | date}}</p>
+<p>Next month is {{budgetService.debtdata.nextMonth | date}}</p>
+<md-input-container color="accent" >
+    <input mdInput type="number" placeholder="Available monthly to pay debt" [(ngModel)]="budgetService.debtdata.availMonthly">
+</md-input-container>
 <div>
     <section *ngFor="let d of budgetService.debtdata.data; let i = index" [style.background-color]="i % 2 === 0 ? '#555' : '#222'" class="section-style">
         <md-input-container color="accent">
@@ -27,3 +34,6 @@
           </button>
     </section>
 </div>
+<button md-raised-button color="primary" (click)="budgetService.get_extraPay()">Calc</button>
+<p>Available: ${{budgetService.debtdata.availMonthly}}</p>
+<payoff></payoff>

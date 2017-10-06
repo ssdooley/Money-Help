@@ -1,0 +1,24 @@
+.header {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+
+.add-button {
+    margin-left: 10px;
+}
+
+.section-style {
+    padding-left: 1em;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+.p-spacing {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: gray;
+    border: solid 1px black;
+}

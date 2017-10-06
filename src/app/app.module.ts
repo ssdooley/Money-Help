@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BudgetComponent } from './components/budget/budget.component';
 import { DebtComponent } from './components/debt/debt.component';
 import { ExpensesComponent } from './components/budget/expenses.component';
+import { PayoffComponent } from './components/debt/payoff.component';
 
 
 
@@ -27,6 +28,7 @@ import { ExpensesComponent } from './components/budget/expenses.component';
     BudgetComponent,
     ExpensesComponent,
     DebtComponent,
+    PayoffComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { ExpensesComponent } from './components/budget/expenses.component';
       { path: 'home', component: HomeComponent },
       { path: 'budget', component: BudgetComponent},
       { path: 'debt', component: DebtComponent },
+      { path: 'payoff', component: PayoffComponent },
       { path: '**', redirectTo: 'home' }
     ])
   ],

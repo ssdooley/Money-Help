@@ -12,15 +12,15 @@ export class Expense {
         this.data.push(new ExpenseData());
         this.data.push(new ExpenseData());
 
-        this.numbers = [
-            2, 4, 6, 8, 10, 12
-        ];
+        // this.numbers = [
+        //     2, 4, 6, 8, 10, 12
+        // ];
 
-        this.numbers.map(n => {
-            return n * n;
-        }).forEach(n => {
-            console.log(n);
-        });
+        // this.numbers.map(n => {
+        //     return n * n;
+        // }).forEach(n => {
+        //     console.log(n);
+        // });
     }
 
     get total(): number {

@@ -23,9 +23,6 @@
         <md-input-container class="number-input" color="accent">
             <input mdInput  placeholder="Minimum Payment" [(ngModel)]="d.minPayment" type="number">
         </md-input-container>
-        <md-input-container class="number-input" color="accent">
-            <input mdInput  placeholder="Actual Payment" [(ngModel)]="d.actPayment" type="number">
-        </md-input-container>
         <md-input-container class="percent-input" color="accent">
             <input mdInput  placeholder="Percentage Rate" [(ngModel)]="d.apr" type="number">
         </md-input-container>
@@ -34,6 +31,6 @@
           </button>
     </section>
 </div>
-<button md-raised-button color="primary" (click)="budgetService.get_extraPay()">Calc</button>
+<button md-raised-button color="primary" (click)="budgetService.getExtraPay()">Calc</button>
 <p>Available: ${{budgetService.debtdata.availMonthly}}</p>
 <payoff></payoff>

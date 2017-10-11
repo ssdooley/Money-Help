@@ -37,16 +37,17 @@ export class BudgetService {
         this.debtdata.data.splice(index, 1);
     }
 
-    get_extraPay() {
-        let extraPay = 0;
+    getExtraPay() {
+        const sortedData = this.debtdata.data.sort((a, b) => {
+            return a.payoff > b.payoff ? 1 : -1;
+        });
 
-        if(this.debtdata.totalDebt > 0 ){
-            this.debtdata.data.map(p => {
-                extraPay = Math.min.apply(p.payoff);
-                console.log(extraPay);
-            });            
-        }
-        
-        return extraPay;
+        sortedData.forEach(d => {
+            if (sortedData.indexOf(d) === 0) {
+                d.extraPayment = this.debtdata.availMonthly + d.minPayment;
+            } else {
+                d.extraPayment = d.minPayment;
+            }
+        });
     }
 }

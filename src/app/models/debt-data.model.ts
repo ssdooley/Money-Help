@@ -5,7 +5,6 @@ export class DebtData {
     apr: number;
     minPayment: number;
     actPayment: number;
-    availMonthly: number;
     extraPayment: number;
 
     constructor() {
@@ -14,6 +13,5 @@ export class DebtData {
         this.apr = 1;
         this.minPayment = 100;
         this.actPayment = 0;
-        this.availMonthly = 3500;
     }
 }

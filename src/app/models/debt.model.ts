@@ -6,6 +6,7 @@ export class Debt {
     currentDay: Date;
     nextMonth: Date;
     nextn: number;
+    availMonthly: number;
     data = new Array<DebtData>();
 
     constructor() {

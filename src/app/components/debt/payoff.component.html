@@ -1,9 +1,13 @@
 <h2>Payoff Screen</h2>
 <div>
-    <section *ngFor="let d of budgetService.debtdata.data; let i = index" [style.background-color]="i % 2 === 0 ? '#555' : '#222'" class="section-style">
-        <p class="p-spacing" placeholder="Debt Name" >{{d.debtType}}</p>        
-        <p class="p-spacing" placeholder="Payoff"  type="number">Payoff: ${{d.payoff | number:'1.2'}}</p>
-        <!-- <p class="p-spacing" placeholder="Min"  type="number">Payment: ${{d.minPayment | number:'1.2'}}</p> -->
-        <p class="p-spacing" placeholder="Total"  type="number">Total Payment: ${{d.extraPayment | number:'1.2'}}</p>
+    <section class="ng-style" *ngFor="let s of budgetService.debtdata.monthlyArray">
+        <section *ngFor="let d of budgetService.debtdata.monthlyData; let i = index" [style.background-color]="i % 2 === 0 ? '#555' : '#222'"
+            class="section-style">
+            <p class="p-spacing" placeholder="Debt Name">{{d.debtName}}</p>
+            <p class="p-spacing" placeholder="Payoff" type="number">Payoff: ${{d.newPayoff | number:'1.2'}}</p>
+            <p class="p-spacing" placeholder="Total" type="number">Total Payment: ${{d.additionalPayment | number:'1.2'}}</p>
+            <p class="p-spacing" placeholder="Intereset" type="number">Interest: ${{d.interest | number:'1.2'}}</p>
+            <p class="p-spacing" placeholder="Remaining" type="number">New Balance: ${{d.balance | number:'1.2'}}</p>
+        </section>
     </section>
 </div>

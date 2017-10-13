@@ -1,4 +1,6 @@
 import { DebtData } from './debt-data.model';
+import { MonthlyBalance } from './monthly-balance';
+import { MonthlyCalcs } from './monthly-calcs';
 
 export class Debt {
     id: number;
@@ -8,8 +10,12 @@ export class Debt {
     nextn: number;
     availMonthly: number;
     data = new Array<DebtData>();
+    monthlyData = new Array<MonthlyBalance>();
+    monthlyArray = new Array<MonthlyCalcs>();
+
 
     constructor() {
+        this.availMonthly = 0;
         this.data = new Array<DebtData>();
         this.data.push(new DebtData());
         this.data.push(new DebtData());

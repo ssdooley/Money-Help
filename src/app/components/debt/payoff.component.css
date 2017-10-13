@@ -25,3 +25,8 @@
     height: 20px;
     margin-top: 0px;
 }
+
+.ng-style {
+    border: 2px solid #EEF5F8;
+    margin-bottom: 20px;
+}
